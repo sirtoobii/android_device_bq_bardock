@@ -147,6 +147,7 @@ PRODUCT_PACKAGES += \
     copybit.msm8953 \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
+    libdisplayconfig \
     memtrack.msm8953 \
     liboverlay
 
