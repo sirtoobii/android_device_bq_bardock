@@ -852,6 +852,8 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 vendor/lib/libloc_ds_api.so
 
 # Graphics
+-vendor/lib/libsdm-disp-vndapis.so
+-vendor/lib64/libsdm-disp-vndapis.so
 lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
 lib/vendor.qti.hardware.qdutils_disp@1.0.so

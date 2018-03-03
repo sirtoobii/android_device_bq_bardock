@@ -14,16 +14,29 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/bq/bardock/full_bardock.mk)
-
-# Inherit some common LineageOS stuff.
+# Inherit some common Lineage stuff.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+# Device
+$(call inherit-product, device/bq/bardock/device.mk)
+
+PRODUCT_GMS_CLIENTID_BASE := android-bq
+
+# Device identifier. This must come after all inclusions
+TARGET_VENDOR := BQ
+PRODUCT_DEVICE := bardock
 PRODUCT_NAME := lineage_bardock
+PRODUCT_BRAND := BQ
+PRODUCT_MODEL := Aquaris X Pro
+PRODUCT_MANUFACTURER := BQ
 BOARD_VENDOR := BQ
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=bq/bardock-pro/bardock-pro:7.1.1/NMF26F/1502270114:user/release-keys \
-    PRIVATE_BUILD_DESC="bardock-user 7.1.1 NMF26F 1.4.3_20170809-1111 release-keys"
+        PRODUCT_NAME=bardock \
+        PRIVATE_BUILD_DESC="bq/bardock-pro/bardock-pro:8.1.0/OPM1.171019.011/1523:user/release-keys"
 
-PRODUCT_GMS_CLIENTID_BASE := android-bq
+BUILD_FINGERPRINT := bardockpro_bq-user:8.1.0/OPM1.171019.011/1523/release-keys
