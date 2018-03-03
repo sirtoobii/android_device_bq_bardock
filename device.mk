@@ -217,15 +217,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-qrd.conf:system/etc/libnfc-qrd.conf
 
 PRODUCT_PACKAGES += \
-    com.nxp.nfc.nq \
-    libnqnfc-nci \
-    libp61-jcop-kit \
-    nfc_nci.nqx.default \
-    NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
-    Tag \
-    com.android.nfc_extras
+    android.hardware.nfc@1.0-impl \
+    android.hardware.nfc@1.0-service \
+    com.android.nfc_extras \
+    nfc_nci.msm8953 \
+    NfcNci \
+    Tag
 
 # OMX
 PRODUCT_PACKAGES += \
