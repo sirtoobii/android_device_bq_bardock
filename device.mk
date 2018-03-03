@@ -136,6 +136,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
+# mct_pipeline
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/mct_pipeline.xml:system/vendor/etc/mct_pipeline.xml
 
 # Display
 PRODUCT_PACKAGES += \
