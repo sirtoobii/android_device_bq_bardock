@@ -300,12 +300,14 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
-    hostapd_default.conf \
     hostapd \
-    fstman.ini \
+    wificond \
+    wifilogd \
+		wlutil \
     wpa_supplicant \
     wpa_supplicant.conf \
     wcnss_service \
