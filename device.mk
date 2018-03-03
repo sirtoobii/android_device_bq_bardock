@@ -150,6 +150,11 @@ PRODUCT_PACKAGES += \
     memtrack.msm8953 \
     liboverlay
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
