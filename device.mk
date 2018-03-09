@@ -312,7 +312,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
-    vndk-sp \
+    vndk-sp
 
 # Vulkan
 PRODUCT_COPY_FILES += \
@@ -328,7 +328,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     wificond \
     wifilogd \
-		wlutil \
+    wlutil \
     wpa_supplicant \
     wpa_supplicant.conf \
     wcnss_service \
