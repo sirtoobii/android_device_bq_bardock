@@ -653,7 +653,6 @@ vendor/etc/camera/s5k2l7_8953_chromatix.xml
 vendor/etc/camera/s5k2l7_chromatix.xml
 vendor/etc/camera/s5k4h8_OFF0380_chromatix.xml
 
-#vendor/lib/libtrueportrait.so
 vendor/lib/libchromaflash.so
 vendor/lib/liboptizoom.so
 vendor/lib/libseemore.so
@@ -763,14 +762,17 @@ vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
 # DSP
+vendor/lib/libsdsprpc.so
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libexternal_dog_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib64/libsdsprpc.so
 
 # Fingerprint
 etc/firmware/fpchips64.b00
@@ -782,6 +784,15 @@ etc/firmware/fpchips64.b05
 etc/firmware/fpchips64.b06
 etc/firmware/fpchips64.flist
 etc/firmware/fpchips64.mdt
+etc/firmware/goodixfp.b00
+etc/firmware/goodixfp.b01
+etc/firmware/goodixfp.b02
+etc/firmware/goodixfp.b03
+etc/firmware/goodixfp.b04
+etc/firmware/goodixfp.b05
+etc/firmware/goodixfp.b06
+etc/firmware/goodixfp.mbn
+etc/firmware/goodixfp.mdt
 etc/firmware/sw_fp.b00
 etc/firmware/sw_fp.b01
 etc/firmware/sw_fp.b02
@@ -790,10 +801,12 @@ etc/firmware/sw_fp.b04
 etc/firmware/sw_fp.b05
 etc/firmware/sw_fp.b06
 etc/firmware/sw_fp.mdt
-#vendor/lib64/hw/csfingerprint.default.so
-#vendor/lib64/hw/gxfingerprint.default.so
-#vendor/lib64/hw/swfingerprint.default.so
+lib64/libgf_ca.so
+lib64/libgf_hal.so
 lib64/libgoodixfingerprintd_binder.so
+lib64/hw/csfingerprint.default.so
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service:vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.bardock
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc:vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.bardock.rc
 
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8953.so
@@ -854,9 +867,13 @@ vendor/lib/libloc_ds_api.so
 # Graphics
 -vendor/lib/libsdm-disp-vndapis.so
 -vendor/lib64/libsdm-disp-vndapis.so
+lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
+lib/libsdm-disp-apis.so:vendor/lib/libsdm-disp-apis.so
 lib/vendor.display.color@1.0.so
 lib/vendor.display.postproc@1.0.so
 lib/vendor.qti.hardware.qdutils_disp@1.0.so
+lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so
+lib64/libsdm-disp-apis.so:vendor/lib64/libsdm-disp-apis.so
 lib64/vendor.display.color@1.0.so
 lib64/vendor.display.postproc@1.0.so
 lib64/vendor.qti.hardware.qdutils_disp@1.0.so
@@ -972,9 +989,11 @@ vendor/lib/libOmxAmrDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxApeDecSw.so
+vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
 # vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libmm-color-convertor.so
@@ -1030,14 +1049,16 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
+etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
+-vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -1077,28 +1098,28 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
+etc/permissions/embms.xml:vendor/etc/permissions/embms.xml
+framework/embmslibrary.jar:vendor/framework/embmslibrary.jar
 framework/qti-telephony-common.jar
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-app/datastatusnotification/datastatusnotification.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
+-vendor/app/SVIService/SVIService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
 vendor/bin/port-bridge
-framework/QtiTelephonyServicelibrary.jar
-framework/embmslibrary.jar
--framework/qcrilhook.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
-etc/permissions/embms.xml
+vendor/lib/liblqe.so
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
-vendor/lib/liblqe.so
+-framework/qcrilhook.jar
+framework/QtiTelephonyServicelibrary.jar
 vendor/lib/libmdmdetect.so
 vendor/lib/libpdmapper.so
 vendor/lib/libpdnotifier.so
@@ -1162,8 +1183,8 @@ vendor/lib64/sensors.ssc.so
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
-vendor/lib/libthermalclient.so
-vendor/lib64/libthermalclient.so
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
@@ -1180,3 +1201,4 @@ vendor/lib/mediadrm/libwvdrmengine.so
 # Wi-Fi
 vendor/bin/fstman
 vendor/bin/wcnss_service
+vendor/bin/cnss-daemon
