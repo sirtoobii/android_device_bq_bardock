@@ -27,6 +27,8 @@
 #
 #
 
+import init.bq.common.rc
+
 on early-init
     mkdir /firmware 0771 system system
     mkdir /system 0777 root root
@@ -75,6 +77,11 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
 
 on init
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+service qfp-daemon /system/vendor/bin/qfp-daemon
+   class late_start
+   user system
+   group system drmrpc
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1

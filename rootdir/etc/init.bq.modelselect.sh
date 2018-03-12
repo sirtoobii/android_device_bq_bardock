@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#! /vendor/bin/sh
 
 MemTotalStr=`cat /proc/meminfo | grep MemTotal`
 MemTotal=${MemTotalStr:16:8}
