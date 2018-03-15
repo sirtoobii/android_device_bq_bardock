@@ -61,6 +61,9 @@ vendor/bin/wcnss_filter
 vendor/lib/libbtnv.so
 vendor/lib64/libbtnv.so
 
+# BQ (misc)
+bin/adjust_serialno
+
 # Camera
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/libactuator_dw9763.so
@@ -813,6 +816,7 @@ vendor/lib/hw/gatekeeper.msm8953.so
 vendor/lib64/hw/gatekeeper.msm8953.so
 
 # GPS
+vendor/etc/gps.conf
 vendor/etc/flp.conf
 vendor/etc/izat.conf
 vendor/etc/lowi.conf
@@ -865,6 +869,7 @@ vendor/lib64/vendor.qti.gnss@1.0_vendor.so
 vendor/lib/libloc_ds_api.so
 
 # Graphics
+bin/ppd
 -vendor/lib/libsdm-disp-vndapis.so
 -vendor/lib64/libsdm-disp-vndapis.so
 lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so
@@ -1057,8 +1062,8 @@ vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -1099,7 +1104,7 @@ vendor/lib64/libsmemlog.so
 
 # Radio
 -app/embms/embms.apk
-etc/permissions/embms.xml:vendor/etc/permissions/embms.xml
+etc/permissions/embms.xml
 framework/embmslibrary.jar:vendor/framework/embmslibrary.jar
 framework/qti-telephony-common.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
