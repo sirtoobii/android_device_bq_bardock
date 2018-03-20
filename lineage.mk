@@ -31,12 +31,12 @@ TARGET_VENDOR := BQ
 PRODUCT_DEVICE := bardock
 PRODUCT_NAME := lineage_bardock
 PRODUCT_BRAND := BQ
-PRODUCT_MODEL := Aquaris X Pro
+PRODUCT_MODEL := Aquaris X
 PRODUCT_MANUFACTURER := BQ
 BOARD_VENDOR := BQ
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=bardock \
-        PRIVATE_BUILD_DESC="bq/bardock-pro/bardock-pro:8.1.0/OPM1.171019.011/1523:user/release-keys"
+        PRIVATE_BUILD_DESC="bq/bardock/bardock:8.1.0/OPM1.171019.011/1523:user/release-keys"
 
-BUILD_FINGERPRINT := bardockpro_bq-user:8.1.0/OPM1.171019.011/1523/release-keys
+BUILD_FINGERPRINT := bardock_bq-user:8.1.0/OPM1.171019.011/1523/release-keys
