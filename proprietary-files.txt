@@ -78,6 +78,7 @@ lib/libarcsoft_beautyshot.so
 lib/libcam.beautyshot.so
 lib/libcam.vidhance.so
 lib/libmpbase.so
+lib/libtrueportrait.so
 lib/libvidhance.so
 vendor/lib/libmmcamera_dcrf_lib.so
 vendor/lib/libflash_pmic.so

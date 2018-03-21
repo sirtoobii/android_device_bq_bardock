@@ -531,6 +531,7 @@ on property:bluetooth.dun.status=stopped
 on property:vold.decrypt=trigger_restart_framework
     start config_bt_addr
     start cnss_diag
+    start wcnss-service
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -575,6 +576,12 @@ service start_hci_filter /system/vendor/bin/wcnss_filter
     group bluetooth diag system wakelock
     seclabel u:r:bluetooth:s0
     disabled
+
+service wcnss-service /system/vendor/bin/wcnss_service
+    class main
+    user system
+    group system wifi radio
+    oneshot
 
 service config_bt_addr /system/vendor/bin/btnvtool -O
     class core
@@ -733,6 +740,11 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     disabled
     oneshot
 
+service qcom-kickoff /vendor/bin/init.qcom.syspart_fixup.sh
+    class late_start
+    user root
+    oneshot
+
 service modelselect /system/etc/init.bq.modelselect.sh
     class late_start
     user root
@@ -741,6 +753,7 @@ service modelselect /system/etc/init.bq.modelselect.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
     start modelselect
+    start qcom-kickoff
 
 service atfwd /vendor/bin/ATFWD-daemon
     class late_start
